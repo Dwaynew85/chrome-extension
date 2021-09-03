@@ -1,4 +1,4 @@
-let myLeads = [];
+let myLeads = ["www.gamefaqs.com", "www.marvel.com", "www.imdb.com"];
 
 const inputEl = document.getElementById('input-el');
 
