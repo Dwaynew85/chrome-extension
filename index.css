@@ -21,3 +21,16 @@ button {
     border: none;
     font-weight: bold;
 }
+
+ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+li {
+    margin-top: 5px;
+}
+
+a {
+    color: #5F9341;
+}
