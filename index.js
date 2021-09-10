@@ -8,6 +8,8 @@ const ulEl = document.getElementById('ul-el');
 
 const deleteBtn = document.getElementById('delete-btn')
 
+const tabBtn = document.getElementById('tab-btn');
+
 const leadsFromLocalStorage = JSON.parse( localStorage.getItem("myLeads") )
 
 if (leadsFromLocalStorage) {
@@ -51,3 +53,10 @@ inputBtn.addEventListener("click", function() {
     }
 })
 
+tabBtn.addEventListener("click", function() { // will only work once chrome extension is deployed
+    chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
+        myLeads.push(tabs[0].url);
+        localStorage.setItem("myLeads", JSON.stringify( myLeads ) )
+        render(myLeads)        
+    });
+})
